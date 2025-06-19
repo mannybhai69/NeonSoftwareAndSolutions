@@ -1,0 +1,921 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Preview</title>
+  <style>
+  </style>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WA Software - 2025 Edition (WhatsApp Neon)</title>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+   
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* CSS Reset and Basic Setup */
+        :root {
+            --wa-neon-green: #25D366;
+            --wa-neon-blue: #34B7F1;
+            --wa-light-green: #88f7b5;
+            --wa-dark-bg: #054D44; /* Darker version of WA green */
+            --wa-glass-bg: rgba(7, 94, 84, 0.2);
+            --wa-glass-border: rgba(37, 211, 102, 0.3);
+            --text-color: #f0f0f0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #000;
+            color: var(--text-color);
+            font-family: 'Rajdhani', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Animated Background Container */
+        #vanta-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Global Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--wa-neon-green);
+            text-shadow: 0 0 5px var(--wa-neon-green), 0 0 10px var(--wa-neon-green), 0 0 20px var(--wa-neon-green);
+        }
+
+        /* --- Header --- */
+        header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(5, 77, 68, 0.3);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--wa-glass-border);
+            transition: background 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--text-color);
+            text-shadow: 0 0 5px var(--wa-neon-green), 0 0 10px var(--wa-neon-green);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 10px var(--wa-neon-green), 0 0 20px var(--wa-neon-blue);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 35px;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 3px transparent;
+        }
+        
+        nav ul li a:hover {
+            color: var(--wa-neon-green);
+            text-shadow: 0 0 5px var(--wa-neon-green), 0 0 10px var(--wa-neon-green);
+        }
+
+        /* Hamburger menu for mobile */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+
+        /* --- Hero Section --- */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-title {
+            font-size: 6rem; /* ~80px on large screens */
+            font-weight: 900;
+            line-height: 1.1;
+            margin: 0;
+            animation: wa-neon-gradient 5s ease-in-out infinite;
+        }
+
+        @keyframes wa-neon-gradient {
+            0%   { text-shadow: 0 0 10px #25D366, 0 0 20px #25D366, 0 0 30px #25D366, 0 0 40px #34B7F1; color: #fff; }
+            50%  { text-shadow: 0 0 10px #34B7F1, 0 0 20px #34B7F1, 0 0 30px #34B7F1, 0 0 40px #88f7b5; color: #f0f0f0; }
+            100% { text-shadow: 0 0 10px #25D366, 0 0 20px #25D366, 0 0 30px #25D366, 0 0 40px #34B7F1; color: #fff; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-top: 20px;
+            font-weight: 600;
+            text-shadow: 0 0 5px var(--wa-neon-blue);
+            opacity: 0;
+            animation: fadeInGlow 2s ease 1s forwards;
+        }
+
+        .hero-tagline {
+            font-size: 1.4rem;
+            margin-top: 10px;
+            color: #ccc;
+            opacity: 0;
+            animation: fadeInGlow 2s ease 1.5s forwards;
+        }
+
+        @keyframes fadeInGlow {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- About Section --- */
+        .about-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: -40px auto 60px;
+            font-size: 1.2rem;
+            color: #ddd;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .feature-card {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: var(--wa-glass-bg);
+            border: 1px solid var(--wa-glass-border);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 0 20px var(--wa-glass-border);
+        }
+
+        .feature-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .feature-text {
+            flex: 2;
+        }
+        
+        .feature-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+        
+        .feature-text p {
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+        
+        .feature-icon {
+            flex: 1;
+            text-align: center;
+            font-size: 5rem;
+            transition: transform 0.4s ease;
+            text-shadow: 0 0 15px var(--wa-neon-green);
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .icon-green { color: var(--wa-neon-green); }
+        .icon-blue { color: var(--wa-neon-blue); text-shadow: 0 0 15px var(--wa-neon-blue); }
+
+        /* --- Pricing Section --- */
+        .pricing-box {
+            background: var(--wa-glass-bg);
+            border: 1px solid var(--wa-glass-border);
+            border-radius: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 50px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 0 30px rgba(37, 211, 102, 0.3);
+            border-image: linear-gradient(to right, var(--wa-neon-green), var(--wa-neon-blue)) 1;
+        }
+        
+        .pricing-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .price-line {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--wa-neon-green);
+            text-shadow: 0 0 15px var(--wa-neon-green);
+            margin-bottom: 10px;
+        }
+
+        .price-line s {
+            font-size: 1.8rem;
+            color: #999;
+            margin-left: 15px;
+            font-weight: 400;
+            text-shadow: none;
+        }
+
+        #countdown-timer {
+            font-size: 1.5rem;
+            background: rgba(0,0,0,0.3);
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 30px;
+            border: 1px solid var(--wa-glass-border);
+            color: var(--wa-neon-blue);
+            text-shadow: 0 0 8px var(--wa-neon-blue);
+        }
+        
+        .pricing-cta-text {
+            font-size: 1.2rem;
+            color: #ddd;
+            max-width: 500px;
+            margin: 0 auto 30px;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto 40px;
+            text-align: left;
+            display: inline-block;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .benefits-list i {
+            color: var(--wa-neon-green);
+            margin-right: 15px;
+        }
+        
+        .cta-button {
+            background: linear-gradient(45deg, var(--wa-neon-blue), var(--wa-neon-green));
+            color: #fff;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.4rem;
+            font-family: 'Orbitron', sans-serif;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 20px var(--wa-neon-green);
+            text-transform: uppercase;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px var(--wa-neon-green), 0 0 40px var(--wa-neon-blue);
+        }
+
+        /* --- Demo Section --- */
+        .demo-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .video-slot {
+            background: var(--wa-glass-bg);
+            border: 1px solid var(--wa-glass-border);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .video-slot h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .video-placeholder {
+            aspect-ratio: 16 / 9;
+            background: #000;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, rgba(37, 211, 102, 0.1), rgba(52, 183, 241, 0.1));
+            opacity: 0.5;
+        }
+
+        .video-placeholder i {
+            font-size: 5rem;
+            color: #fff;
+            text-shadow: 0 0 15px var(--wa-neon-green);
+            transition: transform 0.3s ease;
+        }
+        
+        .video-placeholder:hover i {
+            transform: scale(1.2);
+            color: var(--wa-neon-green);
+        }
+        
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .screenshot-card {
+            background: var(--wa-glass-bg);
+            border: 1px solid var(--wa-glass-border);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .screenshot-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .screenshot-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid var(--wa-glass-border);
+        }
+        
+        .screenshot-card p {
+            font-weight: 600;
+            color: #ddd;
+        }
+
+        /* --- FAQ & Terms Section --- */
+        .accordion-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            background: var(--wa-glass-bg);
+            border: 1px solid var(--wa-glass-border);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .accordion-question {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            font-family: 'Orbitron';
+        }
+
+        .accordion-question::after {
+            content: '\f078'; /* Font Awesome down arrow */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: transform 0.4s ease;
+            color: var(--wa-neon-green);
+        }
+
+        .accordion-item.active .accordion-question::after {
+            transform: rotate(180deg);
+        }
+
+        .accordion-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+            padding: 0 25px;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .accordion-answer ul {
+            padding-left: 20px;
+        }
+        
+        .accordion-item.active .accordion-answer {
+            padding: 0 25px 20px;
+        }
+
+        /* --- Refund Section --- */
+        #refund {
+            padding-top: 0;
+            padding-bottom: 60px;
+        }
+        .refund-box {
+            background: var(--wa-glass-bg);
+            border: 1px solid var(--wa-glass-border);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2rem;
+            color: #ddd;
+            border-left: 5px solid var(--wa-neon-blue);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--wa-glass-border);
+            background: rgba(5, 77, 68, 0.5);
+        }
+        
+        .footer-links {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: var(--wa-light-green);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--wa-neon-green);
+            text-decoration: underline;
+        }
+
+        footer p {
+            margin: 0;
+            color: #aaa;
+        }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .section-title { font-size: 2.5rem; }
+            .hero-title { font-size: 4rem; }
+            .hero-subtitle { font-size: 1.5rem; }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: rgba(5, 77, 68, 0.9);
+                backdrop-filter: blur(10px);
+                text-align: center;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 20px 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .feature-card, .feature-card:nth-child(even) {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .section-title { font-size: 2rem; }
+            .pricing-box { padding: 30px; }
+            .price-line { font-size: 3rem; }
+            .demo-layout { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 0 15px; }
+            section { padding: 60px 0; }
+            .hero-title { font-size: 2.5rem; }
+            .pricing-box { padding: 20px; }
+            .price-line { font-size: 2.5rem; }
+            .price-line s { font-size: 1.2rem; }
+            .cta-button { font-size: 1.1rem; padding: 15px 30px; }
+            .accordion-question { font-size: 1.1rem; padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="vanta-bg"></div>
+    
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#hero" class="logo">WA Software</a>
+                <div class="menu-toggle" id="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul id="nav-menu">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#demo">Demo</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">WA Software</h1>
+                    <p class="hero-subtitle">2025 Edition WA Marketing Software</p>
+                    <p class="hero-tagline">“Your struggle ends here.”</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">What Can WA Software Do For You?</h2>
+                <p class="about-intro" data-aos="fade-up" data-aos-delay="100">
+                    Our powerful suite of tools is engineered to revolutionize your WhatsApp marketing strategy. From lead generation to automated engagement, we provide everything you need to scale your business and connect with your audience like never before.
+                </p>
+                <div class="features-grid">
+                    <!-- Feature 1 -->
+                    <div class="feature-card" data-aos="fade-right">
+                        <div class="feature-text">
+                            <h3>Group Member Grabber</h3>
+                            <p>Fetch and compile a complete list of members from any WhatsApp group you are a part of.</p>
+                        </div>
+                        <div class="feature-icon icon-green"><i class="fas fa-users-rays"></i></div>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="feature-card" data-aos="fade-left">
+                        <div class="feature-text">
+                            <h3>WA Group Link Extractor</h3>
+                            <p>Automatically scrape and collect WhatsApp group invitation links from any website or online source.</p>
+                        </div>
+                        <div class="feature-icon icon-blue"><i class="fas fa-link"></i></div>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="feature-card" data-aos="fade-right">
+                        <div class="feature-text">
+                            <h3>Auto Responder Bot</h3>
+                            <p>Set up intelligent, customizable auto-replies to engage with your contacts 24/7.</p>
+                        </div>
+                        <div class="feature-icon icon-green"><i class="fas fa-robot"></i></div>
+                    </div>
+                    <div class="feature-card" data-aos="fade-left">
+                        <div class="feature-text"><h3>Contact List Grabber</h3><p>Get contact details instantly.</p></div>
+                        <div class="feature-icon icon-blue"><i class="fas fa-address-book"></i></div>
+                    </div>
+                    <div class="feature-card" data-aos="fade-right">
+                        <div class="feature-text"><h3>Google Map Data Extractor</h3><p>Extract leads from business map listings.</p></div>
+                        <div class="feature-icon icon-green"><i class="fas fa-map-location-dot"></i></div>
+                    </div>
+                     <div class="feature-card" data-aos="fade-left">
+                        <div class="feature-text"><h3>Auto Group Joiner</h3><p>Automatically join targeted groups.</p></div>
+                        <div class="feature-icon icon-blue"><i class="fas fa-right-to-bracket"></i></div>
+                    </div>
+                    <div class="feature-card" data-aos="fade-right">
+                        <div class="feature-text"><h3>WA Number Filter</h3><p>Validate and filter active WA numbers.</p></div>
+                        <div class="feature-icon icon-green"><i class="fas fa-filter-circle-check"></i></div>
+                    </div>
+                     <div class="feature-card" data-aos="fade-left">
+                        <div class="feature-text"><h3>Active Group Member Extractor</h3><p>Get only active participants.</p></div>
+                        <div class="feature-icon icon-blue"><i class="fas fa-user-check"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing">
+            <div class="container">
+                 <h2 class="section-title" data-aos="fade-up">Unlock Your Potential</h2>
+                <div class="pricing-box" data-aos="zoom-in">
+                    <h3 class="pricing-title">Unlock the Full Potential of WA Software</h3>
+                    <div class="price-line">₹299/year <s>₹3499/year</s></div>
+                    <div id="countdown-timer"></div>
+                    <p class="pricing-cta-text">
+                        “Hurry! Today you're here, we are here, and the offer is here — what's holding you back? 1000s have already grown their business with WA Software. You won’t get this again at ₹299... will you?”
+                    </p>
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check-circle"></i> Full access to all premium features</li>
+                        <li><i class="fas fa-check-circle"></i> Priority support</li>
+                        <li><i class="fas fa-check-circle"></i> Regular updates</li>
+                        <li><i class="fas fa-check-circle"></i> 6-Month Warranty</li>
+                    </ul>
+                    <button class="cta-button">Get Offer Now</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Section -->
+        <section id="demo">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">See It In Action</h2>
+                <div class="demo-layout">
+                    <div class="video-slot" data-aos="fade-right">
+                        <h3>How WA Software Works</h3>
+                        <div class="video-placeholder">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                    <div class="video-slot" data-aos="fade-left">
+                        <h3>What Happens After You Purchase</h3>
+                        <div class="video-placeholder">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="screenshots-grid">
+                    <div class="screenshot-card" data-aos="zoom-in-up">
+                        <img src="https://placehold.co/600x400/054D44/25D366?text=Dashboard" alt="Dashboard Preview">
+                        <p>Campaign Scheduler Preview</p>
+                    </div>
+                    <div class="screenshot-card" data-aos="zoom-in-up" data-aos-delay="100">
+                        <img src="https://placehold.co/600x400/054D44/34B7F1?text=Chatbot" alt="Chatbot Preview">
+                        <p>Chatbot in Action</p>
+                    </div>
+                    <div class="screenshot-card" data-aos="zoom-in-up" data-aos-delay="200">
+                        <img src="https://placehold.co/600x400/054D44/88f7b5?text=Analytics" alt="Analytics Preview">
+                        <p>Analytics & Reporting</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Got Questions?</h2>
+                <div class="accordion-container" data-aos="fade-up" data-aos-delay="100">
+                    <div class="accordion-item">
+                        <div class="accordion-question">How to install the software?</div>
+                        <div class="accordion-answer">
+                            <p>We provide a full guide and installation assistance. No worries at all. Our team is available via email and WhatsApp to help you get set up in minutes.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <div class="accordion-question">Will this software keep my number safe from being banned?</div>
+                        <div class="accordion-answer">
+                            <p>If used wisely and not for spam, it's safe. We include features like WA Warmer and best practice guides. But if misused for spamming, bans can happen — the tool itself isn't at fault.</p>
+                        </div>
+                    </div>
+                     <div class="accordion-item">
+                        <div class="accordion-question">How long until I get the license after payment?</div>
+                        <div class="accordion-answer">
+                            <p>Instantly! Your software and license key will be sent to you within 6 hours of successful payment.</p>
+                        </div>
+                    </div>
+                     <div class="accordion-item">
+                        <div class="accordion-question">Is this a one-time payment?</div>
+                        <div class="accordion-answer">
+                            <p>Yes, the current offer of ₹299 gives you full access for one year. There are no hidden monthly fees.</p>
+                        </div>
+                    </div>
+                     <div class="accordion-item">
+                        <div class="accordion-question">Can I upgrade later?</div>
+                        <div class="accordion-answer">
+                            <p>Yes, you'll be notified via email whenever new premium features or major version upgrades are available. Existing users often get special discounts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="terms and condition.html">Terms & Conditions</a>
+                <a href="no refund.html">Refund Policy</a>
+            </div>
+            <p>&copy; 2025 WA Software. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // --- Vanta.js Animated Background ---
+        VANTA.FOG({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            highlightColor: 0x25d366,
+            midtoneColor: 0x34b7f1,
+            lowlightColor: 0x75e54,
+            baseColor: 0x0,
+            blurFactor: 0.60,
+            speed: 1.20,
+            zoom: 0.40
+        });
+
+        // --- Animate on Scroll Initialization ---
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+        });
+
+        // --- Mobile Menu Toggle ---
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // --- Accordion Logic (for FAQ and Terms) ---
+        const accordionItems = document.querySelectorAll('.accordion-item');
+        accordionItems.forEach(item => {
+            const question = item.querySelector('.accordion-question');
+            const answer = item.querySelector('.accordion-answer');
+            
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // This logic closes all other items, which might not be ideal if user wants multiple open
+                // Keeping it this way for a cleaner look
+                accordionItems.forEach(i => {
+                   if (i !== item) {
+                       i.classList.remove('active');
+                       i.querySelector('.accordion-answer').style.maxHeight = 0;
+                       i.querySelector('.accordion-answer').style.padding = '0 25px';
+                   }
+                });
+                
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                    answer.style.padding = '0 25px 20px';
+                } else {
+                     item.classList.remove('active');
+                    answer.style.maxHeight = 0;
+                    answer.style.padding = '0 25px';
+                }
+            });
+        });
+        
+        // --- Countdown Timer ---
+        const countdownElement = document.getElementById('countdown-timer');
+        if(countdownElement){
+            let timeInSeconds = 20 * 60 * 60; // 20 hours
+
+            function updateCountdown() {
+                const hours = Math.floor(timeInSeconds / 3600);
+                const minutes = Math.floor((timeInSeconds % 3600) / 60);
+                const seconds = timeInSeconds % 60;
+
+                countdownElement.innerHTML = 
+                    `${String(hours).padStart(2, '0')} : ${String(minutes).padStart(2, '0')} : ${String(seconds).padStart(2, '0')}`;
+                
+                if (timeInSeconds > 0) {
+                    timeInSeconds--;
+                } else {
+                    clearInterval(countdownInterval);
+                    countdownElement.innerHTML = "Offer Expired!";
+                }
+            }
+
+            const countdownInterval = setInterval(updateCountdown, 1000);
+            updateCountdown(); // Initial call
+        }
+
+    });
+    </script>
+</body>
+</html>
+
+<script></script>
+</body>
+</html>
